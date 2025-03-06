@@ -17,8 +17,10 @@ CSRF_TRUSTED_ORIGINS = ['https://'+os.environ.get('RENDER_EXTERNAL_HOSTNAME')]
 # ✅ CORS & CSRF
 CORS_ALLOW_ALL_ORIGINS = True
 CSRF_ALLOW_ALL_ORIGINS = True
+CORS_ALLOW_ALL_ORIGINS = True
+CORS_ALLOW_CREDENTIALS = True
 
-CORS_ALLOWED_ORIGINS = ['https://engineedbackend.onrender.com']
+
 
 INSTALLED_APPS = [
     "django.contrib.admin",
