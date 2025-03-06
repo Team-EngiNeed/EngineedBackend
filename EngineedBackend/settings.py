@@ -11,11 +11,15 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.environ.get('SECRET_KEY')
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [os.environ.get('RENDER_EXTERNAL_HOSTNAME')]
+CSRF_TRUSTED_ORIGINS = ['https://'+os.environ.get('RENDER_EXTERNAL_HOSTNAME')]
 
 # ✅ CORS & CSRF
 CORS_ALLOW_ALL_ORIGINS = True
 CSRF_ALLOW_ALL_ORIGINS = True
+
+CORS_ALLOWED_ORIGINS = ['https://engineedbackend.onrender.com']
+
 INSTALLED_APPS = [
     "django.contrib.admin",
     "django.contrib.auth",
